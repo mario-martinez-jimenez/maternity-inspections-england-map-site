@@ -6,6 +6,8 @@ This public website contains 179 CQC maternity inspection records at 166 locatio
 
 Search by hospital, trust or postcode. Filter by visit year, inspection group, reason and date precision. Select a location to see dates, context, uncertainty notes, original sources and saved document-page previews. Nearby and repeated records are clustered for display.
 
+The monthly timeline separates routine programme visits, concern-triggered visits, follow-ups, mixed cases and unclear reasons. Click a month or use the First reported month dropdown to filter the map, list and CSV export. Each dated record is counted once by `Inspection from`; a cross-month period is not counted again in later months. There are 178 dated records and one separately selectable unconfirmed month. Publication dates are excluded. Hatching flags periods and single days with existing source qualifications, excluding address-only warnings. The flag does not necessarily mean that the month is uncertain; read the case Notes. Date flags also appear in the list and record panel. Original inspection records and Excel dates are unchanged.
+
 - [Reviewed inspection records (Excel)](records/England_maternity_inspections_2022_2023.xlsx)
 - [Research context and date qualifications (PDF)](records/README_England_maternity_inspections.pdf)
 

@@ -25,8 +25,8 @@
       <div class="filters">
         <h2>Explore the records</h2>
         <label for="search">Hospital, trust or postcode</label><input type="search" id="search" placeholder="e.g. Heartlands, Leeds…" autocomplete="off">
-        <div class="filter-pair"><div><label for="year">Visit year</label><select id="year"><option value="all">2022 & 2023</option value="2022">2022</option><option value="2023">2023</option></select></div><div><label for="precision">Visit dates</label><select id="precision"><option value="all">All certainty</option value="day">Single day</option><option value="period">Date period</option><option value="unconfirmed">Unconfirmed</option></select></div></div>
-        <label for="group">Inspection group</label><select id="group"><option value="all">Both inspection groups</option value="programme">National programme · 131</option><option value="other">Other CQC visits · 48</option></select>
+        <div class="filter-pair"><div><label for="year">Visit year</label><select id="year"><option value="all">2022 & 2023</option><option value="2022">2022</option><option value="2023">2023</option></select></div><div><label for="precision">Visit dates</label><select id="precision"><option value="all">All certainty</option><option value="day">Reported single day</option><option value="period">Date period</option><option value="qualified">Source-qualified day</option><option value="cross-month">Cross-month period</option><option value="flagged">Any date flag</option><option value="unconfirmed">Unconfirmed</option></select></div></div>
+        <label for="group">Inspection group</label><select id="group"><option value="all">Both inspection groups</option><option value="programme">National programme · 131</option><option value="other">Other CQC visits · 48</option></select>
         <label for="reason">Documented inspection reason</label><select id="reason"><option value="all">All reasons</option><option value="routine">Routine programme</option><option value="concern">Concern-triggered</option><option value="followup">Follow-up to concerns</option><option value="mixed">Mixed programme / risk or recheck</option><option value="unclear">Reason unclear</option></select>
         <div class="filter-actions"><button id="clear" class="text-button">Reset filters</button><button id="csv" class="text-button">Export selection ↓</button></div>
       </div>
@@ -36,6 +36,12 @@
     <section class="map-area" aria-label="England inspection map">
       <div class="map-toolbar"><div><strong id="map-count">179 inspection records</strong><span id="map-sites">166 CQC locations</span></div><div class="map-buttons"><button id="street" aria-pressed="false">Street map</button><button id="overview">England view</button></div></div>
       <div id="map" aria-label="Map of maternity inspection locations in England"></div>
+      <section class="timeline" aria-labelledby="timeline-title">
+        <div class="timeline-header"><div><h2 id="timeline-title">Monthly inspection timeline</h2><p id="timeline-summary" aria-live="polite"></p></div><div><label for="month">First reported month</label><select id="month"><option value="all">All months</option></select></div></div>
+        <div class="timeline-scroll"><div id="month-bars" class="month-bars" aria-label="Monthly counts by inspection reason"></div><div class="timeline-years" aria-hidden="true"><span>2022</span><span>2023</span></div></div>
+        <div class="timeline-actions"><span><i class="hatch-key" aria-hidden="true"></i>Period / source-qualified date</span><button id="undated" class="text-button" aria-pressed="false">Month unconfirmed · 1</button></div>
+        <p class="timeline-note">Each record counted once by Inspection from. Hatching flags periods or source qualifications; periods may span months or separate visits. Publication dates are excluded.</p>
+      </section>
       <div class="legend" aria-label="Map legend"><span><i class="dot routine"></i>Routine</span><span><i class="dot concern"></i>Concern</span><span><i class="dot followup"></i>Follow-up</span><span><i class="dot mixed"></i>Mixed</span><span><i class="dot unclear"></i>Unclear</span></div>
       <p class="map-footnote">Points use postcode coordinates. Cluster numbers count inspection records, including repeat visits. Zoom in to separate nearby records.</p>
     </section>
