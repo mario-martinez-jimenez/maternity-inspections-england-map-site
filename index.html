@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Evidence-led research map of CQC maternity inspections in England, 2022–2023.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>England maternity inspections · Research map</title>
+  <link rel="stylesheet" href="assets/vendor/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="assets/vendor/leaflet.js"></script>
+  <script defer src="assets/vendor/leaflet.markercluster.js"></script>
+  <script defer src="data.js"></script>
+  <script defer src="model.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div><p class="eyebrow">MATERNITY CARE · ENGLAND</p><h1>Inspection evidence map <span>2022–2023</span></h1></div>
+    <nav aria-label="Project resources"><button id="methods" class="quiet">Research notes</button><a href="records/England_maternity_inspections_2022_2023.xlsx" download class="download">Download Excel ↗</a></nav>
+  </header>
+  <div class="scope"><span class="scope-dot"></span><strong>England for HES linkage</strong><span>Visit dates and publication dates are distinct. Inspection timing is not established as exogenous.</span><a href="https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics" target="_blank" rel="noopener noreferrer">Why England ↗</a></div>
+  <main>
+    <aside class="finder" aria-label="Find inspections">
+      <div class="filters">
+        <h2>Explore the records</h2>
+        <label for="search">Hospital, trust or postcode</label><input type="search" id="search" placeholder="e.g. Heartlands, Leeds…" autocomplete="off">
+        <div class="filter-pair"><div><label for="year">Visit year</label><select id="year"><option value="all">2022 & 2023</option value="2022">2022</option><option value="2023">2023</option></select></div><div><label for="precision">Visit dates</label><select id="precision"><option value="all">All certainty</option value="day">Single day</option><option value="period">Date period</option><option value="unconfirmed">Unconfirmed</option></select></div></div>
+        <label for="group">Inspection group</label><select id="group"><option value="all">Both inspection groups</option value="programme">National programme · 131</option><option value="other">Other CQC visits · 48</option></select>
+        <label for="reason">Documented inspection reason</label><select id="reason"><option value="all">All reasons</option><option value="routine">Routine programme</option><option value="concern">Concern-triggered</option><option value="followup">Follow-up to concerns</option><option value="mixed">Mixed programme / risk or recheck</option><option value="unclear">Reason unclear</option></select>
+        <div class="filter-actions"><button id="clear" class="text-button">Reset filters</button><button id="csv" class="text-button">Export selection ↓</button></div>
+      </div>
+      <div id="results-count" class="results-count" aria-live="polite"></div>
+      <div id="results" class="results" aria-label="Matching hospitals"></div>
+    </aside>
+    <section class="map-area" aria-label="England inspection map">
+      <div class="map-toolbar"><div><strong id="map-count">179 inspection records</strong><span id="map-sites">166 CQC locations</span></div><div class="map-buttons"><button id="street" aria-pressed="false">Street map</button><button id="overview">England view</button></div></div>
+      <div id="map" aria-label="Map of maternity inspection locations in England"></div>
+      <div class="legend" aria-label="Map legend"><span><i class="dot routine"></i>Routine</span><span><i class="dot concern"></i>Concern</span><span><i class="dot followup"></i>Follow-up</span><span><i class="dot mixed"></i>Mixed</span><span><i class="dot unclear"></i>Unclear</span></div>
+      <p class="map-footnote">Points use postcode coordinates. Cluster numbers count inspection records, including repeat visits. Zoom in to separate nearby records.</p>
+    </section>
+    <aside id="detail" class="detail" tabindex="-1" aria-label="Inspection evidence and context"></aside>
+  </main>
+  <dialog id="image-dialog"><button id="close-image" aria-label="Close evidence image">Close ×</button><p id="image-title"></p><img id="large-image" alt=""><a id="image-source" target="_blank" rel="noopener noreferrer">Open original source ↗</a></dialog>
+  <noscript>This map needs JavaScript. The reviewed Excel and README PDF are available in the records folder.</noscript>
+</body>
+</html>
